@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header con opciones de usuario -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de Tienda de Belleza" class="logo-img">
+        </div>
+            <!-- search-->
+        <div id="search-bar-wrapper">
+            <i class="fa fa-search"></i>
+            <input type="text" id="search-bar" placeholder="Buscar productos..." onkeyup="searchProducts()">
+        </div>
+
+        <div class="user-options">
+              <!-- Iniciar sesión -->
+              <button id="login-button" onclick="openLoginModal()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+             <!-- Contáctenos -->
+             <button id="contact-button" onclick="openContactForm()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+
+            <!-- Carrito -->
+            <button id="cart-button" onclick="openCartModal()">
+                <i class="fa-solid fa-cart-shopping" style="color: rgb(0, 0, 0); transform: scale(1.2);"></i>
+                <span id="cart-count">0</span>
+            </button>
+
+           
+            
+            <!-- Ubicación -->
+               
+        </div>
+    </header>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="img/slider.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Slide 3">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#8249;</button>
+        <button class="next" onclick="moveSlide(1)">&#8250;</button>
+    </div>
+
+    <!-- Sección de productos -->
+    <section id="product-section">
+        
+        
+        <div id="product-list" class="products-container"></div>
+
+        
+        
+        
+    
+        <div id="makeup-products" class="product-list"></div>
+
+        
+
+        <div id="haircare-products" class="product-list"></div>
+
+       
+        
+        <div id="skincare-products" class="product-list"></div>
+    </section>
+    <div class="about-container">
+        <h2>Acerca de Sneaker</h2>
+    
+        <!-- Sección 1 -->
+        <div class="about-section">
+            <i class="fas fa-shoe-prints"></i>
+            <div class="about-details">
+                <h3>Nuestra Misión</h3>
+                <p>"En Sneaker, nos dedicamos a ofrecerte los mejores sneakers y accesorios de alta calidad, siempre con diseños innovadores que te ayudarán a destacar. Nuestra misión es brindarte confort, estilo y durabilidad en cada par de zapatillas."</p>
+            </div>
+        </div>
+    
+        <!-- Sección 2 -->
+        <div class="about-section">
+            <i class="fas fa-cogs"></i>
+            <div class="about-details">
+                <h3>Calidad y Innovación</h3>
+                <p>"Trabajamos con los mejores materiales y tecnología avanzada para garantizar la calidad y el rendimiento de nuestros productos. Cada par de sneakers está diseñado para resistir el paso del tiempo, sin sacrificar el estilo."</p>
+            </div>
+        </div>
+    
+        <!-- Sección 3 -->
+        <div class="about-section">
+            <i class="fas fa-users"></i>
+            <div class="about-details">
+                <h3>Compromiso con el Cliente</h3>
+                <p>"Nuestro compromiso es ofrecerte un servicio al cliente excepcional. Nos aseguramos de que tu experiencia de compra sea rápida, fácil y satisfactoria. En Sneaker, siempre estamos aquí para ayudarte con lo que necesites."</p>
+            </div>
+        </div>
+    
+        <!-- Sección 4 -->
+        <div class="about-section">
+            <i class="fas fa-truck"></i>
+            <div class="about-details">
+                <h3>Envíos Rápidos</h3>
+                <p>"Gracias a nuestros socios logísticos, podemos ofrecerte envíos rápidos y seguros. Recibe tus sneakers en la puerta de tu casa sin complicaciones y a tiempo."</p>
+            </div>
+        </div>
+    
+        <!-- Sección 5 -->
+        <div class="about-section">
+            <i class="fas fa-award"></i>
+            <div class="about-details">
+                <h3>Premios y Reconocimientos</h3>
+                <p>"Hemos sido reconocidos por nuestro diseño y calidad, obteniendo premios en el sector de moda deportiva. Nuestro esfuerzo y dedicación se reflejan en cada producto que fabricamos."</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <!-- Footer con mejoras visuales y Font Awesome para iconos -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sección de enlaces rápidos -->
+            <div class="footer-section">
+                <h3 class="footer-title">Enlaces rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+    
+            <!-- Sección de redes sociales -->
+            <div class="footer-section">
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Sección de suscripción al boletín -->
+            <div class="footer-section newsletter">
+                <h3 class="footer-title">Suscríbete a nuestro boletín</h3>
+                <p>Recibe las últimas noticias, ofertas y descuentos exclusivos directamente en tu correo electrónico.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+    
+            <!-- Sección de información de contacto y dirección -->
+            <div class="footer-section contact">
+                <h3 class="footer-title">Contacto</h3>
+                <p><strong>Dirección:</strong> Av. La Joya 203, Arequipa, Perú</p>
+                <p><strong>Teléfono:</strong> <a href="tel:+984213154">984 213 154</a></p>
+                <p><strong>Email:</strong> <a href="mailto:kati2024@gmail.com">danniza2024@gmail.com</a></p>
+            </div>
+        </div>
+    
+        <!-- Sección de información legal -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sneaker. Todos los derechos reservados.</p>
+            <p><a href="#"></a></p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+
+<!-- Agregar Font Awesome para los iconos -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    
+    
+
+    <!-- Modal de Carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items"></div>
+            <button onclick="openPaymentModal()">Pagar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Pago con Tarjeta de Crédito</h2>
+            <div class="card-logos">
+                <img src="img/visa.png" alt="Visa" class="card-logo">
+                <img src="img/discover.png" alt="MasterCard" class="card-logo">
+                <img src="img/mastercard.jpg" alt="American Express" class="card-logo">
+                <img src="img/amex.png" alt="Discover" class="card-logo">
+            </div>
+
+            <form id="payment-form">
+                <label for="card-number">Número de tarjeta:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Número de tarjeta" required><br>
+
+                <label for="expiry-date">Fecha de vencimiento:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required><br>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required><br>
+
+                <button type="submit">Confirmar pago</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Iniciar sesión -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Iniciar sesión</h2>
+            <p>Accede a tu cuenta para continuar.</p>
+            <form id="login-form" onsubmit="return validateLogin()">
+                <div class="form-group">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Ingresar
+                    </button>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- Modal de Contacto -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactForm()">&times;</span>
+            <h2>Contáctanos</h2>
+            <p>¡Nos encantaría saber de ti! Completa el formulario y te responderemos a la brevedad.</p>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Tu nombre:</label>
+                    <input type="text" id="name" placeholder="Ingresa tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Tu correo:</label>
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" placeholder="Escribe tu mensaje" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
